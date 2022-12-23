@@ -1,12 +1,55 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Змейка</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css" type="text/css"/>
-    </head>
-    <body>
-        <canvas width="400" height="400" id="game"></canvas>
-        <script src="script.js"></script>
-    </body>
+	<head>
+		<meta charset="utf-8">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="popUpStyle.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>	
+
+		<div id="box" class="box hidden visuallyhidden">
+			<div class="second">
+				<div class="third">
+                    <div id="popUpWindow" name="popUpWindow">
+                        <div id="AddResult">Добавить<br>результаты</div>
+                        <div id="EndScore">Счет 4</div>
+                        <div id="Nick">Ник</div>
+                        <input class="input1" id="inputNick">
+                        <div>                            
+                            <button class="Button1" id="Back">Назад</button>
+                            <button class="Button1" id="Add">Добавить</button>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+		
+        <div id="Window">
+            <div id="Menu">
+                <div>
+                    <div id="ScoreLabel">Текущий счет</div>
+                    <div id="Score">4</div>
+                    <button class="Button1" id="Restart">Перезапустить</button>
+                </div>  
+            </div>
+    
+            <div id="Game">
+                <div>
+                    <div id="Logo">Змейка</div>
+                    <canvas width="400" height="400" id="snakeGame"></canvas>
+                </div>
+            </div>
+    
+            <div id="TopTable">
+                <div>
+                    <div id="topPlay">Лучшие игроки</div>
+                    <div id="Table">Лучшие игроки</div>
+                </div>
+            </div>
+        </div>
+
+        <script src="snake.js"></script>
+        <script src="scripts.js"></script>        
+	</body>
 </html>
