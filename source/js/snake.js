@@ -5,6 +5,7 @@ var context = canvas.getContext('2d');
 // (например, 16 * 25 = 400)
 var grid = 16;
 var count = 0;
+let points;
 
 var snake = {
     x: 160,
@@ -104,6 +105,7 @@ function loop() {
             // змея занимает то же место, что и часть тела. сбросить игру
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                 document.getElementById("EndScore").innerHTML = "Счет " + snake.maxCells;
+                points = snake.maxCells;
                 restart();
                 isRunning = false; // остановка игры
 
