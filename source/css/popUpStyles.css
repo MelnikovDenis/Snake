@@ -46,3 +46,44 @@
 #popUpWindow{
     margin: 30px;
 }
+
+#AddResult{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #014d31;
+}
+
+#EndScore {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #014d31;
+}
+
+.input1 {
+    border: 0px;
+    border-radius: 5px;
+    background-color: #c9e1c9;
+    font-size: 20px;
+    color: #014d31;
+    padding: 7px 15px 10px 15px;
+    outline: none;
+    transition: all 0.2s linear;
+    width: calc(100% - 30px);
+    margin-bottom: 40px ;
+}
+
+.input1:focus {
+    background-color: #e0f1e0;
+    transition: all 0.2s linear;
+}
+
+#Nick{
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #014d31;
+}
+
+.Back{
+    float: left;
+}
