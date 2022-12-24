@@ -67,6 +67,10 @@ function loop() {
         snake.cells.pop();
     }
 
+    // рисуем яблоко
+    context.fillStyle = 'red';
+    context.fillRect(apple.x, apple.y, grid-1, grid-1);
+
     // рисуем змейку по одной ячейке за раз
     context.fillStyle = '#014d31';
     snake.cells.forEach(function(cell, index) {
