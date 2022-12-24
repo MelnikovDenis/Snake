@@ -7,6 +7,13 @@
     font-family: Sonic, Arial;
 }
 
+body, html {    
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background: #a2d09f;
+}
+
 canvas {
     background: #c9e1c9;
 }
