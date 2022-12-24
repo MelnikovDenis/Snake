@@ -1,7 +1,9 @@
-//import express from 'express';
 const express = require('express');
+const fileRouter = require('./fileRouter.js');
+
 const PORT = 3000; //порт, который прослушивает сервер
 const app = express();
+app.use('/', fileRouter);
 startApp();
 
 
