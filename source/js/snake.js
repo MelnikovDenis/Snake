@@ -35,6 +35,10 @@ function getRandomInt(min, max) {
 function loop() {
     requestAnimationFrame(loop);
 
+    // замедлить игровой цикл до 15 кадров в секунду вместо 60 (60/15 = 4)
+    if (++count < 4) {
+        return;
+    }
 
     count = 0;
     context.clearRect(0,0,canvas.width,canvas.height);
@@ -43,6 +47,21 @@ function loop() {
     snake.x += snake.dx;
     snake.y += snake.dy;
 
+    // обернуть позицию змейки горизонтально на краю экрана
+    if (snake.x < 0) {
+        snake.x = canvas.width - grid;
+    }
+    else if (snake.x >= canvas.width) {
+        snake.x = 0;
+    }
+
+    // обернуть положение змейки вертикально по краю экрана
+    if (snake.y < 0) {
+        snake.y = canvas.height - grid;
+    }
+    else if (snake.y >= canvas.height) {
+        snake.y = 0;
+    }
 
     // отслеживать, где была змея. перед массивом всегда голова
     snake.cells.unshift({x: snake.x, y: snake.y});
@@ -59,6 +78,7 @@ function loop() {
 
         // рисование на 1 пиксель меньше, чем сетка, создает эффект сетки в теле змеи, чтобы вы могли видеть, насколько она длинна
         context.fillRect(cell.x, cell.y, grid-1, grid-1);
+
     });
 }
 
