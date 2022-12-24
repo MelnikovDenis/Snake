@@ -31,8 +31,13 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+let isRunning = true; // Запущена ли игра 
 // игровой цикл
 function loop() {
+    // Запущена ли игра
+    if(!isRunning)
+        return
+    
     requestAnimationFrame(loop);
 
     // замедлить игровой цикл до 15 кадров в секунду вместо 60 (60/15 = 4)
@@ -99,6 +104,7 @@ function loop() {
             // змея занимает то же место, что и часть тела. сбросить игру
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                 restart();
+                isRunning = false; // остановка игры
 
                 // При поигрыше открыть окно с вводом ника
                 let box = document.getElementById('box');
