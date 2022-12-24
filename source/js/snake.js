@@ -99,6 +99,13 @@ function loop() {
             // змея занимает то же место, что и часть тела. сбросить игру
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                 restart();
+
+                // При поигрыше открыть окно с вводом ника
+                let box = document.getElementById('box');
+                box.classList.remove('hidden');
+                setTimeout(function () {
+                    box.classList.remove('visuallyhidden');
+                }, 20);
             }
         }
     });
@@ -157,3 +164,4 @@ buttonRestart = document.querySelector('#Restart');
 buttonRestart.addEventListener('click', function () {
     restart();  
 }, false);
+
