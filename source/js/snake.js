@@ -35,10 +35,6 @@ function getRandomInt(min, max) {
 function loop() {
     requestAnimationFrame(loop);
 
-    // замедлить игровой цикл до 15 кадров в секунду вместо 60 (60/15 = 4)
-    if (++count < 4) {
-        return;
-    }
 
     count = 0;
     context.clearRect(0,0,canvas.width,canvas.height);
@@ -71,7 +67,6 @@ function loop() {
         snake.cells.pop();
     }
 
-
     // рисуем змейку по одной ячейке за раз
     context.fillStyle = '#014d31';
     snake.cells.forEach(function(cell, index) {
@@ -82,6 +77,34 @@ function loop() {
     });
 }
 
+// прослушивание событий клавиатуры для перемещения змеи
+document.addEventListener('keydown', function(e) {
+    // предотвратите возврат змеи к самой себе, проверив, что она
+    // еще не перемещается по той же оси (нажатие влево при перемещении
+    // влево ничего не будет делать, а нажатие вправо при движении влево
+    // не должно допускать столкновения с собственным телом)
+
+    // клавиша со стрелкой влево
+    if (e.which === 37 && snake.dx === 0) {
+        snake.dx = -grid;
+        snake.dy = 0;
+    }
+    // клавиша со стрелкой вверх
+    else if (e.which === 38 && snake.dy === 0) {
+        snake.dy = -grid;
+        snake.dx = 0;
+    }
+    // клавиша со стрелкой вправо
+    else if (e.which === 39 && snake.dx === 0) {
+        snake.dx = grid;
+        snake.dy = 0;
+    }
+    // клавиша со стрелкой вниз
+    else if (e.which === 40 && snake.dy === 0) {
+        snake.dy = grid;
+        snake.dx = 0;
+    }
+});
 
 // начать игру
 requestAnimationFrame(loop);
