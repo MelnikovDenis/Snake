@@ -103,6 +103,7 @@ function loop() {
         for (var i = index + 1; i < snake.cells.length; i++) {
             // змея занимает то же место, что и часть тела. сбросить игру
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+                document.getElementById("EndScore").innerHTML = "Счет " + snake.maxCells;
                 restart();
                 isRunning = false; // остановка игры
 
