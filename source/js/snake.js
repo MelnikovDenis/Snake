@@ -90,6 +90,22 @@ function loop() {
             apple.x = getRandomInt(0, 25) * grid;
             apple.y = getRandomInt(0, 25) * grid;
         }
+
+        // проверяем столкновение со всеми ячейками после этой (модифицированная пузырьковая сортировка)
+        for (var i = index + 1; i < snake.cells.length; i++) {
+            // змея занимает то же место, что и часть тела. сбросить игру
+            if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+                snake.x = 160;
+                snake.y = 160;
+                snake.cells = [];
+                snake.maxCells = 4;
+                snake.dx = grid;
+                snake.dy = 0;
+
+                apple.x = getRandomInt(0, 25) * grid;
+                apple.y = getRandomInt(0, 25) * grid;
+            }
+        }
     });
 }
 
