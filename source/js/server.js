@@ -10,8 +10,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 mongoose.set('strictQuery', false);
-app.use('/', fileRouter);
-app.use('/db', dbRouter);
+app.use('/', fileRouter); //использования роутера, который обрабатывает запросы файлов
+app.use('/db', dbRouter); //использование роутера, который обрабатывает запросы к бд
 startApp();
 
 

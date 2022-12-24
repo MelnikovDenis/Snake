@@ -195,29 +195,40 @@ buttonBack.addEventListener('click', function () {
 
 buttonAdd = document.querySelector('#Add');
 buttonAdd.addEventListener('click', function () {
-  let message = document.getElementById("inputNick").value;;
-  let maxPoints = points;
+    let message = document.getElementById("inputNick").value;
+    let maxPoints = points;
 
+    //отправка данных на сервер
+    sendResults(message, maxPoints);
 
-  /*
-  Какой-то код, отправляющий данные на сервер
-  */
-  console.log("Имя : " + message)
-  console.log("Счет : " + maxPoints)
-
-  // Закрыть окно
-  box.classList.add('visuallyhidden');    
-    box.addEventListener('transitionend', function(e) {
-        box.classList.add('hidden');
+    // Закрыть окно
+    box.classList.add('visuallyhidden');    
+        box.addEventListener('transitionend', function(e) {
+            box.classList.add('hidden');
+            isRunning = true;
+        }, {
+            capture: false,
+            once: true,
+            passive: false
+        });	
         isRunning = true;
-    }, {
-        capture: false,
-        once: true,
-        passive: false
-    });	
-    isRunning = true;
-    document.getElementById("Score").innerHTML = 4;
-    requestAnimationFrame(loop);	
+        document.getElementById("Score").innerHTML = 4;
+        requestAnimationFrame(loop);	
 
-  return false;
+    return false;
 }, false);
+//отправка данных на сервер
+function sendResults(nick, points){
+    const snakeResult = {
+      nick: nick,
+      points: points
+    }
+    const data = JSON.stringify(snakeResult);
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:3000/db");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data);
+    xhr.onload = () => { 
+    console.log("Server response: ", xhr.statusText); 
+    };
+  }
