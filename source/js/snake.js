@@ -98,18 +98,7 @@ function loop() {
         for (var i = index + 1; i < snake.cells.length; i++) {
             // змея занимает то же место, что и часть тела. сбросить игру
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-                snake.x = 160;
-                snake.y = 160;
-                snake.cells = [];
-                snake.maxCells = 4;
-                snake.dx = grid;
-                snake.dy = 0;
-
-                apple.x = getRandomInt(0, 25) * grid;
-                apple.y = getRandomInt(0, 25) * grid;
-                
-                // Обнуление счета
-                document.getElementById("Score").innerHTML = 4;
+                restart();
             }
         }
     });
@@ -144,5 +133,27 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+const restart = () => {    
+    snake.x = 160;
+    snake.y = 160;
+    snake.cells = [];
+    snake.maxCells = 4;
+    snake.dx = grid;
+    snake.dy = 0;
+
+    apple.x = getRandomInt(0, 25) * grid;
+    apple.y = getRandomInt(0, 25) * grid;
+    
+    // Обнуление счета
+    document.getElementById("Score").innerHTML = 4;
+}
+
 // начать игру
 requestAnimationFrame(loop);
+
+
+
+buttonRestart = document.querySelector('#Restart');
+buttonRestart.addEventListener('click', function () {
+    restart();  
+}, false);
