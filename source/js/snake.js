@@ -35,7 +35,21 @@ function getRandomInt(min, max) {
 function loop() {
     requestAnimationFrame(loop);
 
+
+    // отслеживать, где была змея. перед массивом всегда голова
+    snake.cells.unshift({x: snake.x, y: snake.y});
+
+
+    // рисуем змейку по одной ячейке за раз
+    context.fillStyle = '#014d31';
+    snake.cells.forEach(function(cell, index) {
+
+        // рисование на 1 пиксель меньше, чем сетка, создает эффект сетки в теле змеи, чтобы вы могли видеть, насколько она длинна
+        context.fillRect(cell.x, cell.y, grid-1, grid-1);
+
+    });
 }
+
 
 // начать игру
 requestAnimationFrame(loop);
