@@ -1,0 +1,22 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "node source/js/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelnikovDenis/Snake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelnikovDenis/Snake/issues"
+  },
+  "homepage": "https://github.com/MelnikovDenis/Snake#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
