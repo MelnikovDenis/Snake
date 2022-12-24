@@ -82,6 +82,14 @@ function loop() {
         // рисование на 1 пиксель меньше, чем сетка, создает эффект сетки в теле змеи, чтобы вы могли видеть, насколько она длинна
         context.fillRect(cell.x, cell.y, grid-1, grid-1);
 
+        // змея съела яблоко
+        if (cell.x === apple.x && cell.y === apple.y) {
+            snake.maxCells++;
+
+            // холст размером 400x400, что соответствует сетке 25x25
+            apple.x = getRandomInt(0, 25) * grid;
+            apple.y = getRandomInt(0, 25) * grid;
+        }
     });
 }
 
