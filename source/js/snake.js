@@ -167,6 +167,7 @@ requestAnimationFrame(loop);
 buttonRestart = document.querySelector('#Restart');
 buttonRestart.addEventListener('click', function () {
     restart();  
+    document.getElementById("Score").innerHTML = 4;
 }, false);
 
 
