@@ -36,6 +36,14 @@ function loop() {
     requestAnimationFrame(loop);
 
 
+    count = 0;
+    context.clearRect(0,0,canvas.width,canvas.height);
+
+    // двигаем змею по ее скорости
+    snake.x += snake.dx;
+    snake.y += snake.dy;
+
+
     // отслеживать, где была змея. перед массивом всегда голова
     snake.cells.unshift({x: snake.x, y: snake.y});
 
@@ -46,7 +54,6 @@ function loop() {
 
         // рисование на 1 пиксель меньше, чем сетка, создает эффект сетки в теле змеи, чтобы вы могли видеть, насколько она длинна
         context.fillRect(cell.x, cell.y, grid-1, grid-1);
-
     });
 }
 
