@@ -17,3 +17,31 @@ body, html {
 canvas {
     background: #c9e1c9;
 }
+
+#Window {    
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+
+#Menu{
+    display: flex;
+    align-items: center;
+    margin: 25px 0px;
+}
+
+#Game{
+    display: flex;
+    align-items: center;
+    margin: 25px 0px;
+}
+
+#TopTable{
+    display: flex;
+    align-items: center;
+    margin: 25px 0px;
+}
+
+#Menu #Game #TopTable {
+    min-width: 450px;
+}
