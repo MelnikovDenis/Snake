@@ -42,3 +42,7 @@
 .visuallyhidden {
     opacity: 0;
 }	
+
+#popUpWindow{
+    margin: 30px;
+}

@@ -156,9 +156,6 @@ const restart = () => {
 
     apple.x = getRandomInt(0, 25) * grid;
     apple.y = getRandomInt(0, 25) * grid;
-    
-    // Обнуление счета
-    document.getElementById("Score").innerHTML = 4;
 }
 
 // начать игру
@@ -171,3 +168,22 @@ buttonRestart.addEventListener('click', function () {
     restart();  
 }, false);
 
+
+
+// // При нажатии на кнопку назад всплывающее окно закрывается и игра возобновляется
+let box = document.getElementById('box'),
+buttonBack = document.querySelector('#Back');
+buttonBack.addEventListener('click', function () {
+    box.classList.add('visuallyhidden');    
+    box.addEventListener('transitionend', function(e) {
+        box.classList.add('hidden');
+        isRunning = true;
+    }, {
+        capture: false,
+        once: true,
+        passive: false
+    });	
+    isRunning = true;
+    document.getElementById("Score").innerHTML = 4;
+    requestAnimationFrame(loop);	  
+}, false);
