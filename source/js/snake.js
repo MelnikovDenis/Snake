@@ -47,6 +47,11 @@ function loop() {
     // отслеживать, где была змея. перед массивом всегда голова
     snake.cells.unshift({x: snake.x, y: snake.y});
 
+    // удаляем ячейки по мере удаления от них
+    if (snake.cells.length > snake.maxCells) {
+        snake.cells.pop();
+    }
+
 
     // рисуем змейку по одной ячейке за раз
     context.fillStyle = '#014d31';
