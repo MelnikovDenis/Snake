@@ -188,3 +188,33 @@ buttonBack.addEventListener('click', function () {
     document.getElementById("Score").innerHTML = 4;
     requestAnimationFrame(loop);	  
 }, false);
+
+
+buttonAdd = document.querySelector('#Add');
+buttonAdd.addEventListener('click', function () {
+  let message = document.getElementById("inputNick").value;;
+  let maxPoints = points;
+
+
+  /*
+  Какой-то код, отправляющий данные на сервер
+  */
+  console.log("Имя : " + message)
+  console.log("Счет : " + maxPoints)
+
+  // Закрыть окно
+  box.classList.add('visuallyhidden');    
+    box.addEventListener('transitionend', function(e) {
+        box.classList.add('hidden');
+        isRunning = true;
+    }, {
+        capture: false,
+        once: true,
+        passive: false
+    });	
+    isRunning = true;
+    document.getElementById("Score").innerHTML = 4;
+    requestAnimationFrame(loop);	
+
+  return false;
+}, false);
