@@ -85,6 +85,9 @@ function loop() {
         // змея съела яблоко
         if (cell.x === apple.x && cell.y === apple.y) {
             snake.maxCells++;
+            
+            // отобразить счет на экране
+            document.getElementById("Score").innerHTML = snake.maxCells;
 
             // холст размером 400x400, что соответствует сетке 25x25
             apple.x = getRandomInt(0, 25) * grid;
@@ -104,6 +107,9 @@ function loop() {
 
                 apple.x = getRandomInt(0, 25) * grid;
                 apple.y = getRandomInt(0, 25) * grid;
+                
+                // Обнуление счета
+                document.getElementById("Score").innerHTML = 4;
             }
         }
     });
