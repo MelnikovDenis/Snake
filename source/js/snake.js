@@ -26,14 +26,16 @@ var apple = {
     y: 320
 };
 
+// получаем случайные целые числа в заданном диапазоне
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 // игровой цикл
 function loop() {
     requestAnimationFrame(loop);
 
-    
 }
-
 
 // начать игру
 requestAnimationFrame(loop);
