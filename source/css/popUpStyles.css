@@ -1,7 +1,38 @@
 .box {
-    width: 100px;
-    height: 100px;
-    background: red;
+    background: rgba(0, 0, 0, 0.30);
+    transition: all 0.5s linear;
+    position: fixed;
+    z-index: 10000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: auto;
+}
+
+.second {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.third {
+    margin: 5vw 0px;
+    position: relative;
+    max-width: 90vw;
+    width: 450px;
+    word-wrap: break-word;
+    border: solid 3px #014d31;
+    border-radius: 10px;
+    background-color: #a2d09f; 
 }
 
 .hidden {
