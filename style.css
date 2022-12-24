@@ -125,3 +125,18 @@ body, html {
 .Button1:active{
     background: #00733c;
 }
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 10px; /* ширина для вертикального скролла */
+    height: 10px; /* высота для горизонтального скролла */
+    background-color: #a2d09f;
+    border: solid 0px #a2d09f;
+    border-radius: 5px;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #014d31;
+    border-radius: 5px;;
+}

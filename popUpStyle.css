@@ -1,5 +1,5 @@
 .box {
-    background: rgba(0, 0, 0, 0.22);
+    background: rgba(0, 0, 0, 0.30);
     transition: all 0.5s linear;
     position: fixed;
     z-index: 10000;
