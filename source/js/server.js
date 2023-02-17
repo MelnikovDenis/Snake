@@ -5,7 +5,7 @@ const fileRouter = require('./fileRouter.js');
 const dbRouter = require('./dbRouter.js');
 
 const PORT = 3000; //порт, который прослушивает сервер
-const urlConnectDB = 'mongodb+srv://Sinen:MMelnikovB_1403@cluster0.5mbrsrv.mongodb.net/?retryWrites=true&w=majority';
+const urlConnectDB = 'Заглушка, потому что я светил тут данными для авторизации в бд';
 const app = express();
 app.use(express.json());
 app.use(cors());
